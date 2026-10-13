@@ -1,0 +1,89 @@
+{
+  "author": "Georgi Kalchev (https://402registry.com)",
+  "cloudEndpoint": "https://402registry.com/mcp",
+  "description": "Does an AI crawler see your site? Free registry lookup, x402 pricing; checks paid in USDC on Base.",
+  "homepage": "https://402registry.com",
+  "identifier": "402registry-mcp",
+  "name": "402registry",
+  "prompts": [],
+  "resources": [],
+  "tools": [
+    {
+      "name": "lookup_site",
+      "title": "Look up a site in the registry",
+      "description": "Free. The last dated verdict for a website, if it was ever checked and listed: verdict, score, date and badge. An unknown site is a normal answer (known: false), not an error. To get a fresh check, buy one (see get_pricing).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The https URL (or hostname) of the site, e.g. https://example.com/."
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Look up a site in the registry",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_pricing",
+      "title": "Products, prices and x402 payment requirements",
+      "description": "Every product for sale — the check (one payment, one check) and the catalog snapshot — with its price, the query parameters the paid request needs, and the exact x402 v2 payment requirements. Call this before buying.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Products, prices and x402 payment requirements",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_docs",
+      "title": "Machine documentation",
+      "description": "The whole machine guide as JSON: quickstart, what each verdict means, packs, the rules every check runs, and every public route.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Machine documentation",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_service_status",
+      "title": "Is the service selling right now",
+      "description": "Whether the service is selling right now, in which mode and on which network, and if not, why not. This is configuration, not liveness: the health endpoint is at /health.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Is the service selling right now",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ],
+  "version": "1.0.0"
+}

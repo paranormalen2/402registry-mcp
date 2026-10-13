@@ -1,0 +1,9 @@
+{
+  "name": "402registry-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Does an AI crawler see your site? Free registry lookup, x402 pricing; checks paid in USDC on Base.",
+  "homepage": "https://402registry.com",
+  "author": "Georgi Kalchev (https://402registry.com)",
+  "license": "UNLICENSED"
+}
